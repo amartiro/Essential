@@ -28,17 +28,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func test_getFromURL_createsDataTaskWithURL() throws {
-        let url = URL(string: "http://any-url.com")!
-        let session = URLSessionSpy()
-        let sut = URLSessionHTTPClient(session: session)
-        
-        sut.get(from: url)
-        
-        XCTAssertEqual(session.receivedURLs, [url])
-      
-    }
     
     func test_getFromURL_resumesDataTaskWithURL() throws {
         let url = URL(string: "http://any-url.com")!
@@ -54,14 +43,12 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
 
     private class URLSessionSpy: URLSession, @unchecked Sendable {
-        var receivedURLs = [URL]()
         private var stubs = [URL: URLSessionDataTask]()
         func stub(url: URL, task: URLSessionDataTask) {
             stubs[url] = task
         }
         
         override func dataTask(with url: URL, completionHandler: @escaping(Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-            receivedURLs.append(url)
             return stubs[url] ?? FakeURLSessionDataTask()
         }
         
