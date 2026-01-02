@@ -20,6 +20,8 @@
 		CEEC235C2EF94FDD000A1CC2 /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC23492EF84361000A1CC2 /* XCTestCaseMemoryLeakTrackingHelper.swift */; };
 		CEF6E9032F03F2A300F98DEF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEF6E9022F03F2A300F98DEF /* README.md */; };
 		CEF6E9082F03FB9700F98DEF /* CacheFeedUserCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E9072F03FB9700F98DEF /* CacheFeedUserCaseTests.swift */; };
+		CEF6E90B2F07C9DF00F98DEF /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E90A2F07C9D700F98DEF /* LocalFeedLoader.swift */; };
+		CEF6E90D2F07DF9400F98DEF /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E90C2F07DF9000F98DEF /* FeedStore.swift */; };
 		CEFDAE262EE977DB003AD7E8 /* FeedItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE252EE977DB003AD7E8 /* FeedItemTests.swift */; };
 		CEFDAE282EEC883F003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		CEFDAE2A2EEC8D97003AD7E8 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */; };
@@ -59,6 +61,8 @@
 		CEEC23512EF9499A000A1CC2 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6E9022F03F2A300F98DEF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEF6E9072F03FB9700F98DEF /* CacheFeedUserCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUserCaseTests.swift; sourceTree = "<group>"; };
+		CEF6E90A2F07C9D700F98DEF /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
+		CEF6E90C2F07DF9000F98DEF /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		CEFDAE252EE977DB003AD7E8 /* FeedItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTests.swift; sourceTree = "<group>"; };
 		CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		080EDEF321B6DA7E00813479 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				CEF6E9092F07C9C700F98DEF /* Feed Cache */,
 				CEEC233E2EF1BB71000A1CC2 /* Feed API */,
 				080EDEF521B6DA7E00813479 /* Info.plist */,
 				080EDF1021B6DFA200813479 /* Feed Feature */,
@@ -181,6 +186,15 @@
 			isa = PBXGroup;
 			children = (
 				CEF6E9072F03FB9700F98DEF /* CacheFeedUserCaseTests.swift */,
+			);
+			path = "Feed Cache";
+			sourceTree = "<group>";
+		};
+		CEF6E9092F07C9C700F98DEF /* Feed Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6E90C2F07DF9000F98DEF /* FeedStore.swift */,
+				CEF6E90A2F07C9D700F98DEF /* LocalFeedLoader.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -334,6 +348,8 @@
 				CEEC23442EF1BCE4000A1CC2 /* FeedItemsMapper.swift in Sources */,
 				CEFDAE2A2EEC8D97003AD7E8 /* RemoteFeedLoader.swift in Sources */,
 				080EDF0E21B6DCB600813479 /* FeedLoader.swift in Sources */,
+				CEF6E90D2F07DF9400F98DEF /* FeedStore.swift in Sources */,
+				CEF6E90B2F07C9DF00F98DEF /* LocalFeedLoader.swift in Sources */,
 				CEEC23422EF1BBCC000A1CC2 /* HTTPClient.swift in Sources */,
 				080EDF0C21B6DAE800813479 /* FeedItem.swift in Sources */,
 				CEEC234C2EF86C3C000A1CC2 /* URLSessionHTTPClient.swift in Sources */,
