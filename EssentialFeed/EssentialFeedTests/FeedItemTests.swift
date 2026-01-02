@@ -10,7 +10,7 @@ import XCTest
 
 final class FeedItemTests: XCTestCase {
     func test_FeedItem_Location_set_Correct() throws {
-        let sut = FeedItem(id: UUID(), description: "Bacatrutyun", location: "Yerevan", imageURL: URL(string:"http://www.google.com")!)
+        let sut = FeedImage(id: UUID(), description: "Bacatrutyun", location: "Yerevan", url: URL(string:"http://www.google.com")!)
         XCTAssertEqual(sut.location, "Yerevan")
     }
 }
