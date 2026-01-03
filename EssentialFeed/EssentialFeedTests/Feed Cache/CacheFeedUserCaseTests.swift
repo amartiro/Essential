@@ -10,17 +10,9 @@ import EssentialFeed
 
 final class CacheFeedUserCaseTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func test_init_doesNotMessageStoreUponCreation()  {
         let (_, store) = makeSUT()
-        
+
         XCTAssertEqual(store.receivedMessages, [])
     }
     
@@ -28,17 +20,17 @@ final class CacheFeedUserCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
 
         sut.save(uniqueImageFeed().models) { _ in }
-        
+
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
     
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
-        
+
         sut.save(uniqueImageFeed().models) { _ in }
         store.completeDeletion(with: deletionError)
-        
+
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed] )
     }
 
@@ -46,10 +38,10 @@ final class CacheFeedUserCaseTests: XCTestCase {
         let timestamp = Date()
         let feed = uniqueImageFeed()
         let (sut, store) = makeSUT(currentDate:  { timestamp })
-        
+
         sut.save(feed.models) { _ in }
         store.completeDeletionSuccessfully()
-        
+
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(feed.local, timestamp)])
     }
     
@@ -65,7 +57,7 @@ final class CacheFeedUserCaseTests: XCTestCase {
     func test_save_failsOnInsertionError() {
         let (sut, store) = makeSUT()
         let insertionError = anyNSError()
-        
+
         expect(sut, toCompleteWithError: insertionError) {
             store.completeDeletionSuccessfully()
             store.completeInsertion(with: insertionError)
@@ -84,10 +76,9 @@ final class CacheFeedUserCaseTests: XCTestCase {
     func test_save_doesNotDeliverDeletionErrorAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-
         var receivedResults = [LocalFeedLoader.SaveResult?]()
-        sut?.save(uniqueImageFeed().models) { receivedResults.append($0) }
 
+        sut?.save(uniqueImageFeed().models) { receivedResults.append($0) }
         sut = nil
         store.completeDeletion(with: anyNSError())
 
@@ -97,10 +88,9 @@ final class CacheFeedUserCaseTests: XCTestCase {
     func test_save_doesNotDeliverInsertionErrorAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-
         var receivedResults = [LocalFeedLoader.SaveResult]()
-        sut?.save(uniqueImageFeed().models) { receivedResults.append($0) }
 
+        sut?.save(uniqueImageFeed().models) { receivedResults.append($0) }
         store.completeDeletionSuccessfully()
         sut = nil
         store.completeInsertion(with: anyNSError())
@@ -115,8 +105,10 @@ final class CacheFeedUserCaseTests: XCTestCase {
                           line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
         let store = FeedStoreSpy()
         let sut = LocalFeedLoader(store: store, currentDate: currentDate)
+
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
+
         return (sut, store)
     }
 
@@ -132,8 +124,8 @@ final class CacheFeedUserCaseTests: XCTestCase {
     
     private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for save completion")
-
         var receivedError: Error?
+
         sut.save(uniqueImageFeed().models) { error in
             receivedError = error
             exp.fulfill()
