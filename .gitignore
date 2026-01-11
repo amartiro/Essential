@@ -5,6 +5,7 @@
 ## User settings
 xcuserdata
 */xcuserdata/
+project.xcworkspace/xcuserdata/artak.xcuserdatad
 
 ## Obj-C/Swift specific
 *.hmap
