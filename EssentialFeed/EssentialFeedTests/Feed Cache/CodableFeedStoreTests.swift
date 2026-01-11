@@ -72,57 +72,36 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     func test_insert_deliversNoErrorOnEmptyCache() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
-
-        let insertionError = insert((uniqueImageFeed().local, Date()), to: sut)
-
-        XCTAssertNil(insertionError, "Expected to insert cache successfully")
+        
+        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
     }
 
     func test_insert_deliversNoErrorOnNonEmptyCache() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
-
-        insert((uniqueImageFeed().local, Date()), to: sut)
-
-        let insertionError = insert((uniqueImageFeed().local, Date()), to: sut)
-
-        XCTAssertNil(insertionError, "Expected to override cache successfully")
+        
+        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
     }
     
     func test_insert_overridesPreviouslyInsertedCacheValues() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
-
-        insert((uniqueImageFeed().local, Date()), to: sut)
-
-        let latestFeed = uniqueImageFeed().local
-        let latestTimestamp = Date()
-        insert((latestFeed, latestTimestamp), to: sut)
-
-        expect(sut, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
+        
+        assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
     }
     
     func test_insert_deliversErrorOnInsertionError() {
         let invalidStoreURL = URL(string: "invalid://store-url")!
         let sut = makeSUT(storeURL: invalidStoreURL)
-        let feed = uniqueImageFeed().local
-        let timestamp = Date()
-
-        let insertionError = insert((feed, timestamp), to: sut)
-
-        XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error")
-        expect(sut, toRetrieve: .empty)
+        
+        assertThatInsertDeliversErrorOnInsertionError(on: sut)
     }
     
     func test_insert_hasNoSideEffectsOnInsertionError() {
         let invalidStoreURL = URL(string: "invalid://store-url")!
         let sut = makeSUT(storeURL: invalidStoreURL)
-        let feed = uniqueImageFeed().local
-        let timestamp = Date()
-
-        insert((feed, timestamp), to: sut)
-
-        expect(sut, toRetrieve: .empty)
+        
+        assertThatInsertHasNoSideEffectsOnInsertionError(on: sut)
     }
 
     func test_delete_deliversNoErrorOnEmptyCache() {
