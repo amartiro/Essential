@@ -43,6 +43,13 @@
   },
   "testTargets" : [
     {
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "CEF6E94A2F140D2E00F98DEF",
+        "name" : "EssentialFeedCaheIntegrationTests"
+      }
+    },
+    {
       "parallelizable" : true,
       "target" : {
         "containerPath" : "container:EssentialFeed.xcodeproj",
