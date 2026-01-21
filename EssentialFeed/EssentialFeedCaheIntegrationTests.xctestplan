@@ -19,6 +19,11 @@
       ]
     },
     "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:EssentialFeed.xcodeproj",
+      "identifier" : "CEEC23502EF9499A000A1CC2",
+      "name" : "EssentialFeedAPIEndToEndTests"
+    },
     "testExecutionOrdering" : "random"
   },
   "testTargets" : [

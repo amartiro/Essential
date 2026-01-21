@@ -1,0 +1,34 @@
+{
+  "configurations" : [
+    {
+      "id" : "353E0FB9-3766-4F49-BA37-B25AF3BB8B3A",
+      "name" : "Configuration 1",
+      "options" : {
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "identifier" : "CEEC23502EF9499A000A1CC2",
+          "name" : "EssentialFeedAPIEndToEndTests"
+        }
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:EssentialFeed.xcodeproj",
+      "identifier" : "CEEC23502EF9499A000A1CC2",
+      "name" : "EssentialFeedAPIEndToEndTests"
+    },
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "CEEC23502EF9499A000A1CC2",
+        "name" : "EssentialFeedAPIEndToEndTests"
+      }
+    }
+  ],
+  "version" : 1
+}
