@@ -14,7 +14,8 @@
       "containerPath" : "container:EssentialFeed.xcodeproj",
       "identifier" : "CE3083632F2175D3008E5B3D",
       "name" : "EssentialFeediOS"
-    }
+    },
+    "testExecutionOrdering" : "random"
   },
   "testTargets" : [
     {

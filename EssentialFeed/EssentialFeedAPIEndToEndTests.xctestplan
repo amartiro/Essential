@@ -8,7 +8,8 @@
           "containerPath" : "container:EssentialFeed.xcodeproj",
           "identifier" : "CEEC23502EF9499A000A1CC2",
           "name" : "EssentialFeedAPIEndToEndTests"
-        }
+        },
+        "testExecutionOrdering" : "random"
       }
     }
   ],
@@ -18,6 +19,7 @@
       "identifier" : "CEEC23502EF9499A000A1CC2",
       "name" : "EssentialFeedAPIEndToEndTests"
     },
+    "testExecutionOrdering" : "random",
     "testTimeoutsEnabled" : true
   },
   "testTargets" : [
