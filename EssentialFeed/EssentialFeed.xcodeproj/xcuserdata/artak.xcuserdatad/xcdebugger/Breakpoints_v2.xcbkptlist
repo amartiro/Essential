@@ -83,16 +83,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "611F6C5E-B377-4839-93A9-8665910B1972"
+            uuid = "F6962BCF-290B-4F93-8B19-0CC88FF65683"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EssentialFeedCaheIntegrationTests/EssentialFeedCaheIntegrationTests.swift"
+            filePath = "EssentialFeediOSTests/FeedViewControllerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "makeSUT(file:line:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "test_viewDidLoad_loadsFeed()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BABB7CE-ABFE-4DB2-90E1-9DCD8B149A22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EssentialFeediOSTests/FeedViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "test_init_doesNotLoadFeed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
