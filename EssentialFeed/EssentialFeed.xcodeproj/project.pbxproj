@@ -13,6 +13,7 @@
 		CE3083262F2171F1008E5B3D /* EssentialFeedAPIEndToEndTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = CE3083252F2171F1008E5B3D /* EssentialFeedAPIEndToEndTests.xctestplan */; };
 		CE30836F2F2175D3008E5B3D /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3083642F2175D3008E5B3D /* EssentialFeediOS.framework */; };
 		CE79F68F2F24FEF0000116B2 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080EDEF121B6DA7E00813479 /* EssentialFeed.framework */; };
+		CE79F6902F2502DA000116B2 /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC23492EF84361000A1CC2 /* XCTestCaseMemoryLeakTrackingHelper.swift */; };
 		CEDFC27B2F16F7F7008A757A /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC23492EF84361000A1CC2 /* XCTestCaseMemoryLeakTrackingHelper.swift */; };
 		CEDFC27C2F16FB78008A757A /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E9192F0A76B600F98DEF /* FeedCacheTestHelpers.swift */; };
 		CEDFC27D2F16FC06008A757A /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E91B2F0A79B100F98DEF /* SharedTestHelpers.swift */; };
@@ -678,6 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE79F6902F2502DA000116B2 /* XCTestCaseMemoryLeakTrackingHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
