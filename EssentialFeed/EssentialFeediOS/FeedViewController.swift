@@ -10,8 +10,9 @@ import EssentialFeed
 
 final public class FeedViewController: UITableViewController {
     private var loader: FeedLoader?
+    private var tableModel = [FeedImage]()
     private var onViewIsAppearing: ((FeedViewController) -> Void)?
-        
+    
     public convenience init(loader: FeedLoader) {
         self.init()
         self.loader = loader
@@ -23,9 +24,9 @@ final public class FeedViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
         onViewIsAppearing = { vc in
-           vc.refresh()
-           vc.refreshControl?.addTarget(vc, action: #selector(vc.refresh), for: .valueChanged)
-           vc.onViewIsAppearing = nil
+            vc.refresh()
+            vc.refreshControl?.addTarget(vc, action: #selector(vc.refresh), for: .valueChanged)
+            vc.onViewIsAppearing = nil
         }
         load()
     }
@@ -34,15 +35,30 @@ final public class FeedViewController: UITableViewController {
         super.viewIsAppearing(animated)
         onViewIsAppearing?(self)
     }
-
+    
     @objc private func load() {
         refreshControl?.beginRefreshing()
-        loader?.load { [weak self] _ in
-           self?.refreshControl?.endRefreshing()
+        loader?.load { [weak self] result in
+            self?.tableModel = (try? result.get()) ?? []
+            self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
         }
     }
-
+    
     @objc private func refresh() {
-       refreshControl?.beginRefreshing()
+        refreshControl?.beginRefreshing()
+    }
+    
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableModel.count
+    }
+    
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModel = tableModel[indexPath.row]
+        let cell = FeedImageCell()
+        cell.locationContainer.isHidden = (cellModel.location == nil)
+        cell.locationLabel.text = cellModel.location
+        cell.descriptionLabel.text = cellModel.description
+        return cell
     }
 }
