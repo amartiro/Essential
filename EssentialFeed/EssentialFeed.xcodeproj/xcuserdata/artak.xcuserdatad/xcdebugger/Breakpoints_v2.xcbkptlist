@@ -90,10 +90,10 @@
             filePath = "EssentialFeediOSTests/FeedViewControllerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "beginRefreshing()"
-            landmarkType = "7">
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "FakeRefreshControl"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,9 +106,9 @@
             filePath = "EssentialFeediOSTests/FeedViewControllerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "endRefreshing()"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "beginRefreshing()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,8 +122,8 @@
             filePath = "EssentialFeediOSTests/FeedViewControllerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "FakeRefreshControl"
             landmarkType = "3">
          </BreakpointContent>
@@ -138,10 +138,10 @@
             filePath = "EssentialFeediOSTests/FeedViewControllerTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "replaceRefreshControlWithFakeForiOS17PlusSupport()"
-            landmarkType = "7">
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "FeedViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,8 +154,8 @@
             filePath = "EssentialFeediOS/FeedViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "viewIsAppearing(_:)"
             landmarkType = "7">
          </BreakpointContent>
