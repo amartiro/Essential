@@ -9,6 +9,8 @@ xcuserdata
 */xcuserdata/*
 *.xcworkspace/xcuserdata/artak.xcuserdatad*
 *.xcodeproj/project.xcworkspace/xcuserdata
+xcuserdata/
+*.xcuserstate
 
 ## Obj-C/Swift specific
 *.hmap
