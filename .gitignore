@@ -11,6 +11,7 @@ xcuserdata
 *.xcodeproj/project.xcworkspace/xcuserdata
 xcuserdata/
 *.xcuserstate
+project.xcworkspace/xcuserdata/
 
 ## Obj-C/Swift specific
 *.hmap
