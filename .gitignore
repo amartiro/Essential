@@ -3,13 +3,10 @@
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## User settings
-xcuserdata
-xcuserdata
 *xcuserdata/*
-*/xcuserdata/*
-*.xcworkspace/xcuserdata/artak.xcuserdatad*
+**/xcuserdata/*
+**.xcworkspace/xcuserdata/artak.xcuserdatad*
 *.xcodeproj/project.xcworkspace/xcuserdata
-xcuserdata/
 *.xcuserstate
 project.xcworkspace/xcuserdata/
 
