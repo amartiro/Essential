@@ -4,8 +4,9 @@
 
 ## User settings
 
+*xcuserdata/*
 **/xcuserdata/**
-**.xcworkspace/xcuserdata/**
+**.xcworkspace/xcuserdata/artak*
 *.xcodeproj/project.xcworkspace/xcuserdata
 *.xcuserstate
 project.xcworkspace/xcuserdata/
