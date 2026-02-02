@@ -4,7 +4,8 @@
       "id" : "CC3450CA-1354-4A38-9CDD-81291B71B42C",
       "name" : "Test Scheme Action",
       "options" : {
-
+        "threadSanitizerEnabled" : true,
+        "undefinedBehaviorSanitizerEnabled" : true
       }
     }
   ],
@@ -15,7 +16,9 @@
       "identifier" : "CE3083632F2175D3008E5B3D",
       "name" : "EssentialFeediOS"
     },
-    "testExecutionOrdering" : "random"
+    "testExecutionOrdering" : "random",
+    "threadSanitizerEnabled" : true,
+    "undefinedBehaviorSanitizerEnabled" : true
   },
   "testTargets" : [
     {
