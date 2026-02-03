@@ -4,12 +4,9 @@
 
 ## User settings
 
-*xcuserdata/*
-**/xcuserdata/**
-**.xcworkspace/xcuserdata/artak*
-*.xcodeproj/project.xcworkspace/xcuserdata
-*.xcuserstate
-*/project.xcworkspace/xcuserdata/*
+**/xcuserdata
+**.xcodeproj/project.xcworkspace/xcuserdata/**
+*/project.xcworkspace/xcuserdata
 
 
 ## Obj-C/Swift specific
