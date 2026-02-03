@@ -12,7 +12,6 @@ extension FeedViewController {
     func replaceRefreshControlWithFakeForiOS17PlusSupport() {
         let fakeRefreshControl = FakeRefreshControl()
         
-        refreshController?.view = fakeRefreshControl
         refreshControl?.allTargets.forEach { target in
             refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
                 fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
@@ -33,12 +32,15 @@ extension FeedViewController {
         return feedImageView(at: index) as? FeedImageCell
     }
     
-    func simulateFeedImageViewNotVisible(at row: Int) {
+    @discardableResult
+    func simulateFeedImageViewNotVisible(at row: Int) -> FeedImageCell? {
         let view = simulateFeedImageViewVisible(at: row)
         
         let delegate = tableView.delegate
         let index = IndexPath(row: row, section: feedImagesSection)
         delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
+        
+        return view
     }
     
     func simulateFeedImageViewNearVisible(at row: Int) {
