@@ -1,18 +1,63 @@
 {
   "configurations" : [
     {
-      "id" : "A5D20191-1B26-4EA5-A15E-692B6BCDBA99",
-      "name" : "Configuration 1",
+      "id" : "CBE89F01-00B0-46BF-B2D2-704989D5465D",
+      "name" : "Test Scheme Action",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "testTimeoutsEnabled" : true
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "identifier" : "080EDEF021B6DA7E00813479",
+          "name" : "EssentialFeed"
+        },
+        {
+          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "identifier" : "CEEC23502EF9499A000A1CC2",
+          "name" : "EssentialFeedAPIEndToEndTests"
+        },
+        {
+          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "identifier" : "080EDEF921B6DA7E00813479",
+          "name" : "EssentialFeedTests"
+        }
+      ]
+    },
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-com.apple.CoreData.ConcurrencyDebug 1"
+      }
+    ],
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:EssentialFeed.xcodeproj",
+      "identifier" : "080EDEF021B6DA7E00813479",
+      "name" : "EssentialFeed"
+    },
+    "threadSanitizerEnabled" : true
   },
   "testTargets" : [
-
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "080EDEF921B6DA7E00813479",
+        "name" : "EssentialFeedTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "CEEC23502EF9499A000A1CC2",
+        "name" : "EssentialFeedAPIEndToEndTests"
+      }
+    }
   ],
   "version" : 1
 }
