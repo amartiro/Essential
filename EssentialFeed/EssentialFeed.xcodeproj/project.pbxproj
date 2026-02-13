@@ -53,7 +53,8 @@
 		CEF6E9462F13F68100F98DEF /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E9442F13F68100F98DEF /* FeedStore.xcdatamodeld */; };
 		CEF6E94F2F140D2F00F98DEF /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080EDEF121B6DA7E00813479 /* EssentialFeed.framework */; };
 		CEFBC2372F3FA50E00C07DC1 /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBC2362F3FA50900C07DC1 /* FeedPresenterTests.swift */; };
-		CEFBC23C2F3FB0C900C07DC1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEFBC23A2F3FB0C900C07DC1 /* Feed.strings */; };
+		CEFBC2442F3FB68E00C07DC1 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBC2432F3FB68900C07DC1 /* FeedPresenter.swift */; };
+		CEFBC2452F3FB81700C07DC1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEFBC23A2F3FB0C900C07DC1 /* Feed.strings */; };
 		CEFDAE262EE977DB003AD7E8 /* FeedItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE252EE977DB003AD7E8 /* FeedItemTests.swift */; };
 		CEFDAE282EEC883F003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		CEFDAE2A2EEC8D97003AD7E8 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */; };
@@ -141,6 +142,7 @@
 		CEFBC23F2F3FB2F600C07DC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		CEFBC2402F3FB4D600C07DC1 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		CEFBC2412F3FB4DA00C07DC1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		CEFBC2432F3FB68900C07DC1 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		CEFDAE252EE977DB003AD7E8 /* FeedItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTests.swift; sourceTree = "<group>"; };
 		CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		080EDEF321B6DA7E00813479 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				CEFBC2422F3FB67C00C07DC1 /* Feed Presentation */,
 				CEF6E9092F07C9C700F98DEF /* Feed Cache */,
 				CEEC233E2EF1BB71000A1CC2 /* Feed API */,
 				080EDEF521B6DA7E00813479 /* Info.plist */,
@@ -380,6 +383,14 @@
 			isa = PBXGroup;
 			children = (
 				CEFBC2362F3FA50900C07DC1 /* FeedPresenterTests.swift */,
+			);
+			path = "Feed Presentation";
+			sourceTree = "<group>";
+		};
+		CEFBC2422F3FB67C00C07DC1 /* Feed Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CEFBC2432F3FB68900C07DC1 /* FeedPresenter.swift */,
 				CEFBC23A2F3FB0C900C07DC1 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
@@ -596,6 +607,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFBC2452F3FB81700C07DC1 /* Feed.strings in Resources */,
 				CEF6E9032F03F2A300F98DEF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,7 +616,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEFBC23C2F3FB0C900C07DC1 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +659,7 @@
 				CEFDAE2A2EEC8D97003AD7E8 /* RemoteFeedLoader.swift in Sources */,
 				CEF6E90F2F07FF0A00F98DEF /* RemoteFeedItem.swift in Sources */,
 				CEF6E91F2F0AA64700F98DEF /* FeedCachePolicy.swift in Sources */,
+				CEFBC2442F3FB68E00C07DC1 /* FeedPresenter.swift in Sources */,
 				CEF6E93B2F13DF4D00F98DEF /* CoreDataHelpers.swift in Sources */,
 				CEF6E9402F13E0EC00F98DEF /* ManagedFeedImage.swift in Sources */,
 				CEF6E9462F13F68100F98DEF /* FeedStore.xcdatamodeld in Sources */,
