@@ -53,6 +53,7 @@
 		CEF6E9462F13F68100F98DEF /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEF6E9442F13F68100F98DEF /* FeedStore.xcdatamodeld */; };
 		CEF6E94F2F140D2F00F98DEF /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080EDEF121B6DA7E00813479 /* EssentialFeed.framework */; };
 		CEFBC2372F3FA50E00C07DC1 /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBC2362F3FA50900C07DC1 /* FeedPresenterTests.swift */; };
+		CEFBC23C2F3FB0C900C07DC1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CEFBC23A2F3FB0C900C07DC1 /* Feed.strings */; };
 		CEFDAE262EE977DB003AD7E8 /* FeedItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE252EE977DB003AD7E8 /* FeedItemTests.swift */; };
 		CEFDAE282EEC883F003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		CEFDAE2A2EEC8D97003AD7E8 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */; };
@@ -137,6 +138,9 @@
 		CEF6E94B2F140D2E00F98DEF /* EssentialFeedCaheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedCaheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF6E9552F140D8C00F98DEF /* EssentialFeedCaheIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedCaheIntegrationTests.xctestplan; sourceTree = "<group>"; };
 		CEFBC2362F3FA50900C07DC1 /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
+		CEFBC23F2F3FB2F600C07DC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
+		CEFBC2402F3FB4D600C07DC1 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
+		CEFBC2412F3FB4DA00C07DC1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
 		CEFDAE252EE977DB003AD7E8 /* FeedItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTests.swift; sourceTree = "<group>"; };
 		CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
@@ -376,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFBC2362F3FA50900C07DC1 /* FeedPresenterTests.swift */,
+				CEFBC23A2F3FB0C900C07DC1 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -567,9 +572,9 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"pt-BR",
 				el,
+				Base,
 			);
 			mainGroup = 080EDEE721B6DA7E00813479;
 			productRefGroup = 080EDEF221B6DA7E00813479 /* Products */;
@@ -599,6 +604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFBC23C2F3FB0C900C07DC1 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +748,19 @@
 			targetProxy = CEF6E9502F140D2F00F98DEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CEFBC23A2F3FB0C900C07DC1 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEFBC23F2F3FB2F600C07DC1 /* en */,
+				CEFBC2402F3FB4D600C07DC1 /* el */,
+				CEFBC2412F3FB4DA00C07DC1 /* pt-BR */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		080EDF0321B6DA7E00813479 /* Debug */ = {
