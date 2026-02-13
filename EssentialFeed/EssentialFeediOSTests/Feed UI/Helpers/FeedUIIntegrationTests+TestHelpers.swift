@@ -49,6 +49,10 @@ extension FeedViewController {
         ds?.tableView(tableView, prefetchRowsAt: [index])
     }
     
+    var errorMessage: String? {
+        return errorView?.message
+    }
+    
     var isShowingLoadingIndicator: Bool {
         return refreshControl?.isRefreshing == true
     }
