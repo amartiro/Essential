@@ -17,17 +17,18 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
     var tableModel = [FeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
-    private var onViewIsAppearing: ((FeedViewController) -> Void)?
+    private var onViewIsAppearing: (() -> Void)?
     private var cellControllers = [IndexPath: FeedImageCellController]()
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        refresh()
+      //  refresh()
         
-        onViewIsAppearing = { vc in
-            vc.refresh()
-            vc.onViewIsAppearing = nil
+        onViewIsAppearing = { [weak self]  in
+            guard let self else { return }
+            self.refresh()
+            self.onViewIsAppearing = nil
         }
     }
     
@@ -37,7 +38,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
     
     public override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
-        onViewIsAppearing?(self)
+        onViewIsAppearing?()
     }
 
     func display(_ viewModel: FeedLoadingViewModel) {
