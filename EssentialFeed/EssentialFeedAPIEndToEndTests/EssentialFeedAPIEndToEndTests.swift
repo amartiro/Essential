@@ -8,8 +8,8 @@
 import XCTest
 import EssentialFeed
 
-final class EssentialFeedAPIEndToEndTests: XCTestCase {
-    
+class EssentialFeedAPIEndToEndTests: XCTestCase {
+
     func demo() {
         let cache = URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 100 * 1024 * 1024)
         
@@ -24,10 +24,10 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
         URLCache.shared = cache
     }
     
-    func test_endToEndTestSercerGETFeedResult_matchesFixedTestAccountData() {
+    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         switch getFeedResult() {
         case let .success(imageFeed)?:
-            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account feed")
+            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account image feed")
             XCTAssertEqual(imageFeed[0], expectedImage(at: 0))
             XCTAssertEqual(imageFeed[1], expectedImage(at: 1))
             XCTAssertEqual(imageFeed[2], expectedImage(at: 2))
@@ -45,12 +45,25 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
         }
     }
     
+    func test_endToEndTestServerGETFeedImageDataResult_matchesFixedTestAccountData() {
+        switch getFeedImageDataResult() {
+        case let .success(data)?:
+            XCTAssertFalse(data.isEmpty, "Expected non-empty image data")
+            
+        case let .failure(error)?:
+            XCTFail("Expected successful image data result, got \(error) instead")
+            
+        default:
+            XCTFail("Expected successful image data result, got no result instead")
+        }
+    }
+    
+    // MARK: - Helpers
+    
     private func getFeedResult(file: StaticString = #file, line: UInt = #line) -> FeedLoader.Result? {
-        let testServerURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5c52cdd0b8a045df091d2fff/1548930512083/feed-case-study-test-api-feed.json")!
-        let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
-        let loader = RemoteFeedLoader(url: testServerURL, client: client)
-        trackForMemoryLeaks(client, file: file, line: line)
+        let loader = RemoteFeedLoader(url: feedTestServerURL, client: ephemeralClient())
         trackForMemoryLeaks(loader, file: file, line: line)
+        
         let exp = expectation(description: "Wait for load completion")
         
         var receivedResult: FeedLoader.Result?
@@ -59,10 +72,38 @@ final class EssentialFeedAPIEndToEndTests: XCTestCase {
             exp.fulfill()
         }
         wait(for: [exp], timeout: 5.0)
+        
         return receivedResult
     }
     
-    // MARK: - Helpers
+    private func getFeedImageDataResult(file: StaticString = #file, line: UInt = #line) -> FeedImageDataLoader.Result? {
+        let loader = RemoteFeedImageDataLoader(client: ephemeralClient())
+        trackForMemoryLeaks(loader, file: file, line: line)
+        
+        let exp = expectation(description: "Wait for load completion")
+        let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
+
+        var receivedResult: FeedImageDataLoader.Result?
+        _ = loader.loadImageData(from: url) { result in
+            receivedResult = result
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 5.0)
+        
+        return receivedResult
+    }
+    
+    private var feedTestServerURL: URL {
+        return URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
+        // let testServerURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5c52cdd0b8a045df091d2fff/1548930512083/feed-case-study-test-api-feed.json")!
+
+    }
+    
+    private func ephemeralClient(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
+        let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
+        trackForMemoryLeaks(client, file: file, line: line)
+        return client
+    }
     
     private func expectedImage(at index: Int) -> FeedImage {
         return FeedImage(
