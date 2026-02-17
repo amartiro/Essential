@@ -22,7 +22,7 @@ class AutomaticMemoryLeakDetectionDemo {
 
     func load() {
         someProtocol.get { [weak self] in
-            guard let self = self else { return }
+            guard let self else { return }
             
             self.value = 1
         }

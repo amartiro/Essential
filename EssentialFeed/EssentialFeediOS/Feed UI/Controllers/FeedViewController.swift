@@ -27,8 +27,8 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
 
         onViewIsAppearing = { [weak self]  in
             guard let self else { return }
-            self.refresh()
-            self.onViewIsAppearing = nil
+            refresh()
+            onViewIsAppearing = nil
         }
     }
     

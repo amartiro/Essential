@@ -19,12 +19,13 @@ final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
         presenter?.didStartLoadingFeed()
         
         feedLoader.load { [weak self] result in
+            guard let self else { return }
             switch result {
             case let .success(feed):
-                self?.presenter?.didFinishLoadingFeed(with: feed)
+                presenter?.didFinishLoadingFeed(with: feed)
                 
             case let .failure(error):
-                self?.presenter?.didFinishLoadingFeed(with: error)
+                presenter?.didFinishLoadingFeed(with: error)
             }
         }
     }
