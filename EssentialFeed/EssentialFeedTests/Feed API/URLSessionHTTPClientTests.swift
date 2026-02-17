@@ -32,7 +32,10 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
     
     func test_cancelGetFromURLTask_cancelsURLRequest() {
-        let receivedError = resultErrorFor(taskHandler: { $0.cancel() }) as NSError?
+        var task: HTTPClientTask?
+        URLProtocolStub.onStartLoading { task?.cancel() }
+        
+        let receivedError = resultErrorFor(taskHandler: { task = $0 }) as NSError?
 
         XCTAssertEqual(receivedError?.code, URLError.cancelled.rawValue)
     }
@@ -43,7 +46,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         let receivedError = resultErrorFor((data: nil, response: nil, error: requestError))
         
         let nsError = receivedError as NSError?
-
+        
         XCTAssertEqual(nsError?.code, requestError.code)
         XCTAssertEqual(nsError?.domain, requestError.domain)
     }
@@ -75,13 +78,13 @@ class URLSessionHTTPClientTests: XCTestCase {
         let response = anyHTTPURLResponse()
         
         let receivedValues = resultValuesFor((data: nil, response: response, error: nil))
-
+        
         let emptyData = Data()
         XCTAssertEqual(receivedValues?.data, emptyData)
         XCTAssertEqual(receivedValues?.response.url, response.url)
         XCTAssertEqual(receivedValues?.response.statusCode, response.statusCode)
     }
-
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
@@ -96,16 +99,16 @@ class URLSessionHTTPClientTests: XCTestCase {
     
     private func resultValuesFor(_ values: (data: Data?, response: URLResponse?, error: Error?), file: StaticString = #file, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
         let result = resultFor(values, file: file, line: line)
-
+        
         switch result {
-        case let .success(data, response):
+        case let .success((data, response)):
             return (data, response)
         default:
             XCTFail("Expected success, got \(result) instead", file: file, line: line)
             return nil
         }
     }
-
+    
     private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil, taskHandler: (HTTPClientTask) -> Void = { _ in }, file: StaticString = #file, line: UInt = #line) -> Error? {
         let result = resultFor(values, taskHandler: taskHandler, file: file, line: line)
         
