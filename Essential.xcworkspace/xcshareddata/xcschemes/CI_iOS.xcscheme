@@ -64,16 +64,30 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CEF6E94A2F140D2E00F98DEF"
                BuildableName = "EssentialFeedCaheIntegrationTests.xctest"
                BlueprintName = "EssentialFeedCaheIntegrationTests"
                ReferencedContainer = "container:EssentialFeed/EssentialFeed.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEE6C6ED2F44794100466A84"
+               BuildableName = "EssentialAppTests.xctest"
+               BlueprintName = "EssentialAppTests"
+               ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -120,17 +134,14 @@
       </CodeCoverageTargets>
       <TestPlans>
          <TestPlanReference
-            reference = "container:CI_iOS.xctestplan"
+            reference = "container:EssentialFeediOS.xctestplan"
             default = "YES">
          </TestPlanReference>
          <TestPlanReference
-            reference = "container:EssentialFeedCaheIntegrationTests.xctestplan">
-         </TestPlanReference>
-         <TestPlanReference
-            reference = "container:EssentialFeediOS.xctestplan">
-         </TestPlanReference>
-         <TestPlanReference
             reference = "container:EssentialFeedAPIEndToEndTests.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:EssentialFeed/CI_iOS.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
