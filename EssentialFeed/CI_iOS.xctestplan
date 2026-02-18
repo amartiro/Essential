@@ -12,19 +12,19 @@
     "codeCoverage" : {
       "targets" : [
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "containerPath" : "container:EssentialApp\/EssentialApp.xcodeproj",
+          "identifier" : "CEE6C6D72F44793E00466A84",
+          "name" : "EssentialApp"
+        },
+        {
+          "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
           "identifier" : "080EDEF021B6DA7E00813479",
           "name" : "EssentialFeed"
         },
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
-          "identifier" : "CEEC23502EF9499A000A1CC2",
-          "name" : "EssentialFeedAPIEndToEndTests"
-        },
-        {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
-          "identifier" : "080EDEF921B6DA7E00813479",
-          "name" : "EssentialFeedTests"
+          "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
+          "identifier" : "CE3083632F2175D3008E5B3D",
+          "name" : "EssentialFeediOS"
         }
       ]
     },
@@ -45,9 +45,25 @@
     {
       "parallelizable" : true,
       "target" : {
-        "containerPath" : "container:EssentialFeed.xcodeproj",
-        "identifier" : "080EDEF921B6DA7E00813479",
-        "name" : "EssentialFeedTests"
+        "containerPath" : "container:EssentialApp\/EssentialApp.xcodeproj",
+        "identifier" : "CEE6C6ED2F44794100466A84",
+        "name" : "EssentialAppTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
+        "identifier" : "CE30836D2F2175D3008E5B3D",
+        "name" : "EssentialFeediOSTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
+        "identifier" : "CEF6E94A2F140D2E00F98DEF",
+        "name" : "EssentialFeedCaheIntegrationTests"
       }
     },
     {
@@ -56,6 +72,14 @@
         "containerPath" : "container:EssentialFeed.xcodeproj",
         "identifier" : "CEEC23502EF9499A000A1CC2",
         "name" : "EssentialFeedAPIEndToEndTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "080EDEF921B6DA7E00813479",
+        "name" : "EssentialFeedTests"
       }
     }
   ],
