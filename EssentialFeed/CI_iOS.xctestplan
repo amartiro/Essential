@@ -12,19 +12,19 @@
     "codeCoverage" : {
       "targets" : [
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
           "identifier" : "080EDEF021B6DA7E00813479",
           "name" : "EssentialFeed"
         },
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
-          "identifier" : "CEEC23502EF9499A000A1CC2",
-          "name" : "EssentialFeedAPIEndToEndTests"
+          "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
+          "identifier" : "CE3083632F2175D3008E5B3D",
+          "name" : "EssentialFeediOS"
         },
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
-          "identifier" : "080EDEF921B6DA7E00813479",
-          "name" : "EssentialFeedTests"
+          "containerPath" : "container:EssentialApp\/EssentialApp.xcodeproj",
+          "identifier" : "CEE6C6D72F44793E00466A84",
+          "name" : "EssentialApp"
         }
       ]
     },
