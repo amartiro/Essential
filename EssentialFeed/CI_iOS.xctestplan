@@ -45,14 +45,6 @@
     {
       "parallelizable" : true,
       "target" : {
-        "containerPath" : "container:EssentialApp\/EssentialApp.xcodeproj",
-        "identifier" : "CED822B62F478D3300461041",
-        "name" : "EssentialAppUIAcceptanceTests"
-      }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
         "containerPath" : "container:EssentialFeed\/EssentialFeed.xcodeproj",
         "identifier" : "080EDEF921B6DA7E00813479",
         "name" : "EssentialFeedTests"
