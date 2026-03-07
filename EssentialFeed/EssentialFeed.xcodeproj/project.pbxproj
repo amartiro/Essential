@@ -307,6 +307,7 @@
 				CEFBC2422F3FB67C00C07DC1 /* Feed Presentation */,
 				CEF6E9092F07C9C700F98DEF /* Feed Cache */,
 				CEEC233E2EF1BB71000A1CC2 /* Feed API */,
+				CEFBC2572F40F83100C07DC1 /* RemoteFeedImageDataLoader.swift */,
 				080EDEF521B6DA7E00813479 /* Info.plist */,
 				080EDF1021B6DFA200813479 /* Feed Feature */,
 			);
@@ -318,6 +319,7 @@
 			children = (
 				CE491E842F5C2E210056A8CD /* Shared API Infra */,
 				CE491E822F5C221F0056A8CD /* Shared API */,
+				CE491E892F5C3DC10056A8CD /* RemoteLoaderTests.swift */,
 				CE491E862F5C36B60056A8CD /* Image Comments API */,
 				CEFBC2352F3FA4BF00C07DC1 /* Feed Presentation */,
 				080EDF0121B6DA7E00813479 /* Info.plist */,
@@ -370,7 +372,6 @@
 		CE491E822F5C221F0056A8CD /* Shared API */ = {
 			isa = PBXGroup;
 			children = (
-				CE491E892F5C3DC10056A8CD /* RemoteLoaderTests.swift */,
 				CE491E832F5C2DBB0056A8CD /* Helper */,
 			);
 			path = "Shared API";
@@ -420,7 +421,6 @@
 		CEEC233E2EF1BB71000A1CC2 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				CEFBC2572F40F83100C07DC1 /* RemoteFeedImageDataLoader.swift */,
 				CEFBC2542F40F78400C07DC1 /* Helper */,
 				CEFDAE292EEC8974003AD7E8 /* RemoteFeedLoader.swift */,
 				CEEC23432EF1BCE4000A1CC2 /* FeedItemsMapper.swift */,
