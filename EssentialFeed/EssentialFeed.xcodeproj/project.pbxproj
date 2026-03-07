@@ -301,6 +301,7 @@
 				CE491E802F5C21C40056A8CD /* Shared API */,
 				CE491E812F5C21CD0056A8CD /* Shared API Infra */,
 				CE232BAD2F59BAA600598467 /* Image Comments Feature */,
+				CE491E852F5C36760056A8CD /* Image Comments API */,
 				CEFBC2422F3FB67C00C07DC1 /* Feed Presentation */,
 				CEF6E9092F07C9C700F98DEF /* Feed Cache */,
 				CEEC233E2EF1BB71000A1CC2 /* Feed API */,
@@ -315,6 +316,7 @@
 			children = (
 				CE491E842F5C2E210056A8CD /* Shared API Infra */,
 				CE491E822F5C221F0056A8CD /* Shared API */,
+				CE491E862F5C36B60056A8CD /* Image Comments API */,
 				CEFBC2352F3FA4BF00C07DC1 /* Feed Presentation */,
 				080EDF0121B6DA7E00813479 /* Info.plist */,
 				CEEC23482EF84354000A1CC2 /* Helper */,
@@ -387,6 +389,23 @@
 			path = "Shared API Infra";
 			sourceTree = "<group>";
 		};
+		CE491E852F5C36760056A8CD /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				CE232BA82F586D5F00598467 /* ImageCommentsMapper.swift */,
+				CE232BA62F586D2600598467 /* RemoteImageCommentsLoader.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		CE491E862F5C36B60056A8CD /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				CE232BAA2F586DB100598467 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
 		CE79F68E2F24FEF0000116B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,8 +416,6 @@
 		CEEC233E2EF1BB71000A1CC2 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				CE232BA82F586D5F00598467 /* ImageCommentsMapper.swift */,
-				CE232BA62F586D2600598467 /* RemoteImageCommentsLoader.swift */,
 				CEFBC2572F40F83100C07DC1 /* RemoteFeedImageDataLoader.swift */,
 				CEFBC2542F40F78400C07DC1 /* Helper */,
 				CEF6E90E2F07FF0100F98DEF /* RemoteFeedItem.swift */,
@@ -411,7 +428,6 @@
 		CEEC23452EF1CBB4000A1CC2 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				CE232BAA2F586DB100598467 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 				CEFBC25E2F40FAC600C07DC1 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
 				CEFDAE272EEC883A003AD7E8 /* LoadFeedFromRemoteUseCaseTests.swift */,
 			);
