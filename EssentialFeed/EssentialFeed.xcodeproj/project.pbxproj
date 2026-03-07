@@ -13,6 +13,7 @@
 		CE232BA72F586D3000598467 /* RemoteImageCommentsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE232BA62F586D2600598467 /* RemoteImageCommentsLoader.swift */; };
 		CE232BA92F586D6E00598467 /* ImageCommentsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE232BA82F586D5F00598467 /* ImageCommentsMapper.swift */; };
 		CE232BAB2F586DB800598467 /* LoadImageCommentsFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE232BAA2F586DB100598467 /* LoadImageCommentsFromRemoteUseCaseTests.swift */; };
+		CE232BAE2F59C05200598467 /* ImageComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE232BAC2F59B93D00598467 /* ImageComment.swift */; };
 		CE3083262F2171F1008E5B3D /* EssentialFeedAPIEndToEndTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = CE3083252F2171F1008E5B3D /* EssentialFeedAPIEndToEndTests.xctestplan */; };
 		CE30836F2F2175D3008E5B3D /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3083642F2175D3008E5B3D /* EssentialFeediOS.framework */; };
 		CE3FDA2F2F46ED50008E1FCB /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3FDA2E2F46ED47008E1FCB /* FeedCache.swift */; };
@@ -297,7 +298,7 @@
 		080EDEF321B6DA7E00813479 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
-				CE232BAC2F59B93D00598467 /* ImageComment.swift */,
+				CE232BAD2F59BAA600598467 /* Image Comments Feature */,
 				CEFBC2422F3FB67C00C07DC1 /* Feed Presentation */,
 				CEF6E9092F07C9C700F98DEF /* Feed Cache */,
 				CEEC233E2EF1BB71000A1CC2 /* Feed API */,
@@ -331,6 +332,14 @@
 				080EDF0D21B6DCB600813479 /* FeedLoader.swift */,
 			);
 			path = "Feed Feature";
+			sourceTree = "<group>";
+		};
+		CE232BAD2F59BAA600598467 /* Image Comments Feature */ = {
+			isa = PBXGroup;
+			children = (
+				CE232BAC2F59B93D00598467 /* ImageComment.swift */,
+			);
+			path = "Image Comments Feature";
 			sourceTree = "<group>";
 		};
 		CE79F68E2F24FEF0000116B2 /* Frameworks */ = {
@@ -753,6 +762,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE232BAE2F59C05200598467 /* ImageComment.swift in Sources */,
 				CEFBC2472F3FB88500C07DC1 /* FeedViewModel.swift in Sources */,
 				CEEC23442EF1BCE4000A1CC2 /* FeedItemsMapper.swift in Sources */,
 				CEFDAE2A2EEC8D97003AD7E8 /* RemoteFeedLoader.swift in Sources */,
