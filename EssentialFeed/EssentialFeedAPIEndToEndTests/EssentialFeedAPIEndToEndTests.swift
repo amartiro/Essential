@@ -83,6 +83,7 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
     private func getFeedImageDataResult(file: StaticString = #file, line: UInt = #line) -> Swift.Result<[FeedImage], Error>? {
         
         let client = ephemeralClient()
+        let url = feedTestServerURL.appendingPathComponent("73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
         let exp = expectation(description: "Wait for load completion")
         
         var receivedResult: Swift.Result<[FeedImage], Error>?
