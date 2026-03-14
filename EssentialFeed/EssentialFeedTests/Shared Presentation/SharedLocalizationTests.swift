@@ -1,18 +1,18 @@
 //
-//  FeedLocalizationTests.swift
+//  SharedLocalizationTests.swift‎
 //  EssentialFeed
 //
-//  Created by Artak Martirosyan on 03.02.26.
+//  Created by Artak Martirosyan on 15.03.26.
 //
 
 import XCTest
 import EssentialFeed
 
-final class FeedLocalizationTests: XCTestCase {
-    
+class SharedLocalizationTests: XCTestCase {
+
     func test_localizedStrings_haveKeysAndValuesForAllSupportedLocalizations() {
         let table = "Shared"
-        let presentationBundle = Bundle(for: FeedPresenter.self)
+        let presentationBundle = Bundle(for: LoadResourcePresenter<Any, DummyView>.self)
         let localizationBundles = allLocalizationBundles(in: presentationBundle)
         let localizedStringKeys = allLocalizedStringKeys(in: localizationBundles, table: table)
         
@@ -27,6 +27,10 @@ final class FeedLocalizationTests: XCTestCase {
                 }
             }
         }
+    }
+    
+    private class DummyView: ResourceView {
+        func display(_ viewModel: Any) {}
     }
     
     // MARK: - Helpers
@@ -61,4 +65,5 @@ final class FeedLocalizationTests: XCTestCase {
             return acc.union(Set(keys))
         }
     }
+
 }
