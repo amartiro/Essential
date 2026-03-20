@@ -27,7 +27,7 @@ public final class FeedImageCellController: NSObject {
 }
 
 
-extension FeedImageCellController: CellController {
+extension FeedImageCellController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1

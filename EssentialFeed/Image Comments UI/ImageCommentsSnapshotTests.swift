@@ -10,18 +10,18 @@ import EssentialFeediOS
 @testable import EssentialFeed
 
 class ImageCommentsSnapshotTests: XCTestCase {
-
+    
     func test_listWithComments() {
         let sut = makeSUT()
         
         sut.display(comments())
-
+        
         assert(snapshot: sut.snapshot(for: .iPhone8(style: .light)), named: "IMAGE_COMMENTS_light")
         assert(snapshot: sut.snapshot(for: .iPhone8(style: .dark)), named: "IMAGE_COMMENTS_dark")
     }
-
+    
     // MARK: - Helpers
-
+    
     private func makeSUT() -> ListViewController {
         let bundle = Bundle(for: ListViewController.self)
         let storyboard = UIStoryboard(name: "ImageComments", bundle: bundle)
@@ -33,6 +33,11 @@ class ImageCommentsSnapshotTests: XCTestCase {
     }
     
     private func comments() -> [CellController] {
+        commentControllers().map { CellController($0) }
+    }
+    
+    
+    private func commentControllers() -> [ImageCommentCellController] {
         return [
             ImageCommentCellController(
                 model: ImageCommentViewModel(
@@ -54,8 +59,8 @@ class ImageCommentsSnapshotTests: XCTestCase {
                     date: "1 hour ago",
                     username: "a."
                 )
-            ),
+            )
         ]
+        
     }
-
 }
