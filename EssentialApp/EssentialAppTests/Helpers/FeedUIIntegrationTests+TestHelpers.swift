@@ -20,6 +20,7 @@ extension ListViewController {
         }
 
         beginAppearanceTransition(true, animated: false)
+        tableView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
         endAppearanceTransition()
     }
     
@@ -53,8 +54,12 @@ extension ListViewController {
         return simulateFeedImageViewVisible(at: index)?.renderedImage
     }
     
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
+    }
+    
     var errorMessage: String? {
-        return errorView?.message
+        return errorView.message
     }
     
     var isShowingLoadingIndicator: Bool {
