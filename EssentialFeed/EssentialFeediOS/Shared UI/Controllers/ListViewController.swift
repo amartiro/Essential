@@ -26,7 +26,6 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        configureErrorView()
         
         onViewIsAppearing = { [weak self]  in
             guard let self else { return }
@@ -34,6 +33,8 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
             onViewIsAppearing = nil
         }
         
+        configureErrorView()
+
         self.tableView.frame.size.height = 20
     }
     
