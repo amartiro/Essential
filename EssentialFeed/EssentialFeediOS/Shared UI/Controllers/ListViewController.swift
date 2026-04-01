@@ -41,7 +41,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
 
         self.tableView.frame.size.height = 20
     }
-    
+
     private func configureTableView() {
         dataSource.defaultRowAnimation = .fade
         tableView.dataSource = dataSource
