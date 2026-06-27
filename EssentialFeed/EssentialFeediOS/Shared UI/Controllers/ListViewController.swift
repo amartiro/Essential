@@ -30,16 +30,16 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
+        configureTraitCollectionObservers()
+        
         onViewIsAppearing = { vc in
            
             vc.onViewIsAppearing = nil
             vc.refresh()
         }
-        
-        configureTableView()
-        configureTraitCollectionObservers()
 
-        self.tableView.frame.size.height = 20
+      //  self.tableView.frame.size.height = 20
     }
 
     private func configureTableView() {
