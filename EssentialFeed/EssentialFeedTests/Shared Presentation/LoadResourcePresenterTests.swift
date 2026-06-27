@@ -74,7 +74,7 @@ class LoadResourcePresenterTests: XCTestCase {
         line: UInt = #line
     ) -> (sut: SUT, view: ViewSpy) {
         let view = ViewSpy()
-        let sut = SUT(resourceView: view, loadingView: view, errorView: view, mapper: mapper)
+        let sut = SUT(resourceView: view, loadingView: view, errorView: view)
         trackForMemoryLeaks(view, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, view)
